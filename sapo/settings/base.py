@@ -129,7 +129,6 @@ INSTALLED_APPS = (
 
     'djangobower',
     'pipeline',
-    'debug_toolbar',
 
     'django.contrib.admin',
     # Uncomment the next line to enable admin documentation:

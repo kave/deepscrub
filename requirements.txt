@@ -1,0 +1,14 @@
+boto==2.36.0
+dj-database-url==0.3.0
+Django==1.8.2
+django-bower==5.0.2
+django-pipeline==1.4.6
+django-storages==1.1.8
+ecdsa==0.13
+Fabric==1.10.0
+futures==3.0.3
+gunicorn==19.1.1
+paramiko==1.15.2
+psycopg2==2.5.4
+pycrypto==2.6.1
+six==1.9.0

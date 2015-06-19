@@ -1,0 +1,8 @@
+/.vagrant
+*.pyc
+/sapo/settings/local.py
+bower_components
+.DS_Store
+MYENV
+node_modules
+.idea

@@ -133,7 +133,7 @@ INSTALLED_APPS = (
     # 'django.contrib.admindocs',
 
     'core',
-    'sapo',
+    'deepscrub',
 )
 
 EMAIL_SUBJECT_PREFIX = '[sapo] '

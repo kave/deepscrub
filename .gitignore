@@ -1,6 +1,6 @@
 /.vagrant
 *.pyc
-/sapo/settings/local.py
+/deepscrub/settings/local.py
 bower_components
 .DS_Store
 MYENV

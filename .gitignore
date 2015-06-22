@@ -6,5 +6,6 @@ bower_components
 MYENV
 node_modules
 .idea
+!core/static
 static/.gitkeep
 static/*

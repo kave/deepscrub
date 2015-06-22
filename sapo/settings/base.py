@@ -89,7 +89,7 @@ STATICFILES_DIRS = (
 STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.FileSystemFinder',
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
-#    'django.contrib.staticfiles.finders.DefaultStorageFinder',
+   # 'django.contrib.staticfiles.finders.DefaultStorageFinder',
     'pipeline.finders.PipelineFinder',
 )
 
@@ -133,6 +133,7 @@ INSTALLED_APPS = (
     # 'django.contrib.admindocs',
 
     'core',
+    'sapo',
 )
 
 EMAIL_SUBJECT_PREFIX = '[sapo] '
@@ -189,7 +190,7 @@ PIPELINE_CSS = {
         ),
         # Compress passed libraries and have
         # the output in`css/css.min.css`.
-        'output_filename': 'css/css.min.css',
+        'output_filename': 'css.min.css',
         'variant': 'datauri',
     }
 }
@@ -201,9 +202,8 @@ PIPELINE_JS = {
             'bower_components/jquery/dist/jquery.js',
             'bower_components/bootstrap/dist/js/bootstrap.js',
             'bower_components/underscore/underscore.js',
-            'js/compress/*.js',
         ),
         # Compress all passed files into `js/js.min.js`.
-        'output_filename': 'js/js.min.js',
+        'output_filename': 'js.min.js',
     }
 }

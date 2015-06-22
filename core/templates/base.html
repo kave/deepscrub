@@ -1,4 +1,5 @@
 <!doctype html>
+{% load staticfiles %}
 {% load pipeline %}
 
 {% comment %} paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ {% endcomment %}
@@ -6,41 +7,98 @@
 <!--[if IE 7]>    <html class="lt-ie10 lt-ie9 lt-ie8" lang="en"> <![endif]-->
 <!--[if IE 8]>    <html class="lt-ie10 lt-ie9" lang="en"> <![endif]-->
 <!--[if IE 9]>    <html class="lt-ie10" lang="en"> <![endif]-->
-<!--[if (gt IE 9)|!(IE)]><!--> <html lang="en"> <!--<![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!-->
+<html lang="en"> <!--<![endif]-->
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-    <title></title>
+    <title>Deep Scrub</title>
+
+    <link rel="shortcut icon" href="{% static 'freeze/favicon.png' %}">
+
 
     {% comment %}
         Core CSS includes (for inclusion on all pages)
         Django Pipeline Artifact css.min.css
     {% endcomment %}
-    {% stylesheet 'css' %}
+{#    {% stylesheet 'css' %}#}
+    <link rel="stylesheet" type="text/css" href="{% static 'bower_components/bootstrap/dist/css/bootstrap.min.css' %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'bower_components/fontawesome/css/font-awesome.min.css' %}"/>
+
+
+    <link rel="stylesheet" type="text/css" href="{% static 'css/freeze/css/animate.css' %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/freeze/css/slick.css' %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/freeze/js/rs-plugin/css/settings.css' %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/freeze/css/freeze.css' %}"/>
 
     {% comment %}
         Per-page CSS is compressed separately so that the global stuff doesn't get re-downloaded each time
     {% endcomment %}
     {% block extra_css %}{% endblock %}
+
+    <script type="text/javascript" src="{% static 'bower_components/jquery/dist/jquery.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'bower_components/bootstrap/dist/js/bootstrap.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'bower_components/underscore/underscore-min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'css/freeze/js/modernizr.custom.32033.js' %}"></script>
+
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
 </head>
+
+<div class="pre-loader">
+    <div class="load-con">
+        <img src="{% static 'css/freeze/img/freeze/logo.png' %}" class="animated fadeInDown" alt="">
+
+        <div class="spinner">
+            <div class="bounce1"></div>
+            <div class="bounce2"></div>
+            <div class="bounce3"></div>
+        </div>
+    </div>
+</div>
+
 <body>
-    {% block content %}{% endblock %}
+    {% block content %} {% endblock %}
 
-    {% comment %}
-        JavaScript at the bottom for fast page loading:
-        http://developer.yahoo.com/performance/rules.html#js_bottom
-    {% endcomment %}
+<footer class="footer">
+    <div class="container">
+        <p class="pull-left">© 2015, All Rights Reserved</p>
+        <ul class="pull-right list-inline">
+            <li>
+                <a href="https://github.com/kave/deepscrub">DeepScrub Project</a>
+            </li>
+            <li>
+                <a href="https://github.com/kave/deepscrub/issues">Issues</a>
+            </li>
+        </ul>
+    </div>
+</footer>
 
-    {% comment %}
-        Core JS includes (for inclusion on all pages) to be specified here.
-        Django Pipeline Artifact js.min.js
-    {% endcomment %}
-    {% javascript 'js' %}
+{% comment %}
+    Core JS includes (for inclusion on all pages) to be specified here.
+    Django Pipeline Artifact js.min.js
+{% endcomment %}
+{#{% javascript 'js' %}#}
 
-    {% comment %}
-        Per-page JS is compressed separately so that the global stuff doesn't get re-downloaded each time
-    {% endcomment %}
-    {% block extra_js %}{% endblock %}
+<script type="text/javascript" src="{% static 'css/freeze/js/slick.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'css/freeze/js/placeholdem.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'css/freeze/js/rs-plugin/js/jquery.themepunch.plugins.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'css/freeze/js/rs-plugin/js/jquery.themepunch.revolution.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'css/freeze/js/waypoints.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'css/freeze/js/scripts.js' %}"></script>
+<script>
+    $(document).ready(function () {
+        appMaster.preLoader();
+    });
+</script>
+
+{% comment %}
+    Per-page JS is compressed separately so that the global stuff doesn't get re-downloaded each time
+{% endcomment %}
+{% block extra_js %}{% endblock %}
 </body>
 </html>

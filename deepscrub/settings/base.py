@@ -19,7 +19,7 @@ ADMINS = (
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'sapo',
+        'NAME': 'deepscrub',
         'USER': 'postgres',
         'PASSWORD': '',
         'HOST': '',  # Set to empty string for localhost.

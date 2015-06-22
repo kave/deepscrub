@@ -1,1 +1,1 @@
-web: gunicorn sapo.wsgi
+web: gunicorn deepscrub.wsgi

@@ -15,7 +15,7 @@ STATIC_URL = 'http://s3.amazonaws.com/%s/' % AWS_STORAGE_BUCKET_NAME
 AWS_QUERYSTRING_AUTH = False
 AWS_S3_FILE_OVERWRITE = True
 
-PIPELINE_JS_COMPRESSOR = 'pipeline.compressors.yuglify.YuglifyCompressor'
-PIPELINE_CSS_COMPRESSOR = 'pipeline.compressors.yuglify.YuglifyCompressor'
+PIPELINE_JS_COMPRESSOR = 'pipeline.compressors.NoopCompressor'
+PIPELINE_CSS_COMPRESSOR = 'pipeline.compressors.NoopCompressor'
 
 PIPELINE_YUGLIFY_BINARY = '/app/.heroku/python/bin/yuglify'

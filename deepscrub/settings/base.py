@@ -1,4 +1,4 @@
-# Django settings for sapo project.
+# Django settings for deepscrub project.
 
 import os
 import sys
@@ -106,10 +106,10 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 )
 
-ROOT_URLCONF = 'sapo.urls'
+ROOT_URLCONF = 'deepscrub.urls'
 
 # Python dotted path to the WSGI application used by Django's runserver.
-WSGI_APPLICATION = 'sapo.wsgi.application'
+WSGI_APPLICATION = 'deepscrub.wsgi.application'
 
 TEMPLATE_DIRS = (
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
@@ -127,6 +127,7 @@ INSTALLED_APPS = (
 
     'djangobower',
     'pipeline',
+    'storages',
 
     'django.contrib.admin',
     # Uncomment the next line to enable admin documentation:
@@ -136,7 +137,7 @@ INSTALLED_APPS = (
     'deepscrub',
 )
 
-EMAIL_SUBJECT_PREFIX = '[sapo] '
+EMAIL_SUBJECT_PREFIX = '[deepscrub] '
 
 INTERNAL_IPS = ('127.0.0.1', '10.0.2.2')
 

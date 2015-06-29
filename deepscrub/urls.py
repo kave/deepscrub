@@ -5,6 +5,8 @@ from django.conf.urls.static import static
 from core.views import *
 
 admin.autodiscover()
+admin.site.site_header = "DeepScrub Administration"
+admin.site.site_title = "DeepScrub"
 
 urlpatterns = patterns('',
                        # Uncomment the admin/doc line below to enable admin documentation:

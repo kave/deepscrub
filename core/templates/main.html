@@ -3,39 +3,6 @@
 
 {% block content %}
     <header>
-        <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
-            <div class="container">
-                <!-- Brand and toggle get grouped for better mobile display -->
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse"
-                            data-target="#bs-example-navbar-collapse-1">
-                        <span class="fa fa-bars fa-lg"></span>
-                    </button>
-                    <a class="navbar-brand" href="{% url 'core:home' %}">
-                        <img src="{% static 'css/freeze/img/freeze/logo.png' %}" alt="" class="logo">
-                    </a>
-                </div>
-
-                <!-- Collect the nav links, forms, and other content for toggling -->
-                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-
-                    <ul class="nav navbar-nav navbar-right">
-                        <li><a href="#about">about</a>
-                        </li>
-                        <li><a href="#screens">Types</a>
-                        </li>
-                        <li><a href="#reviews">reviews</a>
-                        </li>
-                        <li><a class="getApp" href="#buyNow">Buy!</a>
-                        </li>
-                        <li><a href="#support">contact us</a>
-                        </li>
-                    </ul>
-                </div>
-                <!-- /.navbar-collapse -->
-            </div>
-            <!-- /.container-->
-        </nav>
         <!--RevSlider-->
         <div class="tp-banner-container">
             <div class="tp-banner">
@@ -43,7 +10,8 @@
                     <!-- SLIDE  -->
                     <li data-transition="fade" data-slotamount="7" data-masterspeed="1500">
                         <!-- MAIN IMAGE -->
-                        <img src="{% static 'css/freeze/img/transparent.png' %}" alt="slidebg1" data-bgfit="cover" data-bgposition="left top"
+                        <img src="{% static 'css/freeze/img/transparent.png' %}" alt="slidebg1" data-bgfit="cover"
+                             data-bgposition="left top"
                              data-bgrepeat="no-repeat">
                         <!-- LAYERS -->
                         <!-- LAYER NR. 1 -->
@@ -66,7 +34,7 @@
                              data-speed="500"
                              data-start="700"
                              data-easing="Power4.easeOut">
-                            <img src="{% static 'css/freeze/img/freeze/iphone-freeze.png'%}" alt="">
+                            <img src="{% static 'css/freeze/img/freeze/iphone-freeze.png' %}" alt="">
                         </div>
 
                         <div class="tp-caption large_white_bold sft" data-x="550" data-y="center" data-hoffset="0"
@@ -90,7 +58,8 @@
                     <!-- SLIDE 3 -->
                     <li data-transition="zoomout" data-slotamount="7" data-masterspeed="1000">
                         <!-- MAIN IMAGE -->
-                        <img src="{% static 'css/freeze/img/transparent.png' %}" alt="slidebg1" data-bgfit="cover" data-bgposition="left top"
+                        <img src="{% static 'css/freeze/img/transparent.png' %}" alt="slidebg1" data-bgfit="cover"
+                             data-bgposition="left top"
                              data-bgrepeat="no-repeat">
                         <!-- LAYERS -->
                         <!-- LAYER NR. 1 -->
@@ -222,34 +191,23 @@
                     <a href="javascript:void(0)" class="button js-filter-two">Gentle</a>
                 </div>
                 <div class="slider filtering scrollpoint sp-effect5">
-                    <div class="one">
-                        <img src="{% static 'css/freeze/img/freeze/screens/profile.jpg' %}" alt="">
-                        <h4>Profile Page</h4>
-                    </div>
-                    <div class="one">
-                        <img src="{% static 'css/freeze/img/freeze/screens/menu.jpg' %}" alt="">
-                        <h4>Toggel Menu</h4>
-                    </div>
-                    <div class="one">
-                        <img src="{% static 'css/freeze/img/freeze/screens/weather.jpg' %}" alt="">
-                        <h4>Weather Forcast</h4>
-                    </div>
-                    <div class="one">
-                        <img src="{% static 'css/freeze/img/freeze/screens/signup.jpg' %}" alt="">
-                        <h4>Sign Up</h4>
-                    </div>
-                    <div class="one">
-                        <img src="{% static 'css/freeze/img/freeze/screens/calendar.jpg' %}" alt="">
-                        <h4>Event Calendar</h4>
-                    </div>
-                    <div class="one">
-                        <img src="{% static 'css/freeze/img/freeze/screens/options.jpg' %}" alt="">
-                        <h4>Some Options</h4>
-                    </div>
-                    <div class="two">
-                        <img src="{% static 'css/freeze/img/freeze/screens/sales.jpg' %}" alt="">
-                        <h4>Sales Analysis</h4>
-                    </div>
+                    {% for sponge in strong_sponges %}
+                        <div class="one">
+                            <a href="{% url 'core:product_details' sponge.id %}">
+                                <img src="{% static 'css/freeze/img/freeze/screens/menu.jpg' %}" alt="">
+                            </a>
+                            <h4>{{ sponge.color }}</h4>
+                        </div>
+                    {% endfor %}
+
+                    {% for sponge in gentle_sponges %}
+                        <div class="two">
+                            <a href="{% url 'core:product_details' sponge.id %}">
+                                <img src="{% static 'css/freeze/img/freeze/screens/sales.jpg' %}" alt="">
+                            </a>
+                            <h4>{{ sponge.color }}</h4>
+                        </div>
+                    {% endfor %}
                 </div>
             </div>
         </section>
@@ -393,7 +351,8 @@
                                     </div>
                                     <div class="form-group">
                                         <label for="emailAddr">E-mail</label>
-                                        <input id="emailAddr" type="email" class="form-control" placeholder="Your email"/>
+                                        <input id="emailAddr" type="email" class="form-control"
+                                               placeholder="Your email"/>
                                     </div>
                                     <div class="form-group">
                                     <textarea cols="30" rows="10" class="form-control"

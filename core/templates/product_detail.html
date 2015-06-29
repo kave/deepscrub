@@ -1,0 +1,24 @@
+{% extends 'base-prod.html' %}
+{% load staticfiles %}
+
+{% block content %}
+    <div class="container-fluid">
+        <div class="content-wrapper">
+            <div class="item-container">
+                <div class="container">
+                    <div class="col-md-6 col-sm-6 col-xs-6">
+                        <img src="{% static 'css/freeze/img/freeze/screens/profile.jpg' %}" alt="">
+                    </div>
+                    <div class="col-md-6 col-sm-6 col-xs-6">
+                        <div class="">
+                            {{ sponge.color }}
+                            {{ sponge.price }}
+                            {{ sponge.type }}
+                        </div>
+                        <button class="btn btn-primary btn-lg">Buy Now</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

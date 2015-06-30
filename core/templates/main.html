@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% load staticfiles %}
+{% load crispy_forms_tags %}
 
 {% block content %}
     <header>
@@ -98,26 +99,24 @@
                         <div class="tp-caption mediumlarge_light_white sfl hidden-xs" data-x="left" data-y="center"
                              data-hoffset="0" data-voffset="-50" data-speed="1000" data-start="1000"
                              data-easing="Power4.easeOut">
-                            Powerful Responsive
+                            <strong>DeepScrub</strong> Sponge
                         </div>
                         <div class="tp-caption mediumlarge_light_white sft hidden-xs" data-x="left" data-y="center"
                              data-hoffset="0" data-voffset="0" data-speed="1000" data-start="1200"
                              data-easing="Power4.easeOut">
-                            App Landing Page
+                            Revolutionizing your time in the shower
                         </div>
                         <div class="tp-caption small_light_white sfb hidden-xs" data-x="left" data-y="center"
                              data-hoffset="0" data-voffset="80" data-speed="1000" data-start="1600"
                              data-easing="Power4.easeOut">
-                            <p>Nulla pretium libero interdum, tempus lorem non, rutrum diam. <br> Quisque pellentesque
-                                diam
-                                sed pulvinar lobortis. Vestibulum ante <br>ipsum primis in faucibus orci luctus et
-                                ultrices
-                                posuere cubilia Curae.</p>
+                            <p>The super soft texture creates a rich lather, <br>
+                                so you use less shower gel and leaves skin more refreshed! <br>
+                                Sold right here in the U.S.A</p>
                         </div>
 
                         <div class="tp-caption lfl hidden-xs" data-x="left" data-y="center" data-hoffset="0"
                              data-voffset="160" data-speed="1000" data-start="1800" data-easing="Power4.easeOut">
-                            <a href="#" class="btn btn-primary inverse btn-lg">Purchase</a>
+                            <a href="#screens" class="btn btn-primary inverse btn-lg">Purchase</a>
                         </div>
 
 
@@ -143,7 +142,7 @@
                 <div class="row">
                     <div class="col-md-4 col-sm-4 col-xs-6">
                         <div class="about-item scrollpoint sp-effect2">
-                            <i class="fa fa-download fa-2x"></i>
+                            <i class="fa fa-check-square-o fa-2x"></i>
 
                             <h3>Easy to Use</h3>
 
@@ -152,23 +151,21 @@
                     </div>
                     <div class="col-md-4 col-sm-4 col-xs-6">
                         <div class="about-item scrollpoint sp-effect5">
-                            <i class="fa fa-mobile fa-2x"></i>
+                            <i class="fa fa-forumbee fa-2x"></i>
 
                             <h3>Skin Exfoliation</h3>
 
-                            <p>Cleans deep down-to-the-pores. The textured material soften and smooth surface skin,
-                                as the sponge reaches deep to the pores to remove dirt, oil and dead skin.
-                                After washing, it will leave your skin looking and feeling softer, smooth and refreshed,
-                                with the unmistakable shine of a really deep clean</p>
+                            <p>Cleans deep down-to-the-pores. </p>
                         </div>
                     </div>
                     <div class="col-md-4 col-sm-4 col-xs-6">
                         <div class="about-item scrollpoint sp-effect5">
-                            <i class="fa fa-users fa-2x"></i>
+                            <i class="fa fa-child fa-2x"></i>
 
                             <h3>Hygienic</h3>
 
-                            <p>Once done with your bath, rinse sponge and hang to dry</p>
+                            <p>Reusable, long lasting and are recommended by consumers, dermatologists and health
+                                professionals.</p>
                         </div>
                     </div>
                 </div>
@@ -182,7 +179,6 @@
                     <h1>Types</h1>
 
                     <div class="divider"></div>
-                    <p>See what’s included in the App</p>
                 </div>
 
                 <div class="filter scrollpoint sp-effect3">
@@ -227,16 +223,19 @@
                                 <div class="row">
                                     <div class="col-md-2">
                                         <div class="review-person">
-                                            <img src="http://api.randomuser.me/portraits/women/94.jpg" alt=""
+                                            <img src="https://scontent-iad3-1.xx.fbcdn.net/hphotos-xft1/v/t1.0-9/10565221_10102863681820528_3010458369383116345_n.jpg?oh=1afa023913760729311d70137b45d411&oe=5627B715"
+                                                 alt=""
                                                  class="img-responsive">
                                         </div>
                                     </div>
                                     <div class="col-md-10">
                                         <div class="review-comment">
-                                            <h3>“I love Oleose, I highly recommend it, Everyone Try It Now”</h3>
+                                            <h3>“Very gentle on the skin. After i tried it, i bought some for the rest
+                                                of
+                                                the family”</h3>
 
                                             <p>
-                                                - Krin Fox
+                                                - Linda Xu
                                                 <span>
                                                     <i class="fa fa-star fa-lg"></i>
                                                     <i class="fa fa-star fa-lg"></i>
@@ -253,16 +252,17 @@
                                 <div class="row">
                                     <div class="col-md-2">
                                         <div class="review-person">
-                                            <img src="http://api.randomuser.me/portraits/men/70.jpg" alt=""
+                                            <img src="https://scontent-iad3-1.xx.fbcdn.net/hphotos-xaf1/v/t1.0-9/1509698_336865599831780_4517512671827824322_n.jpg?oh=eb185b39505da56f4a814a07d801f19e&oe=56208E07"
+                                                 alt=""
                                                  class="img-responsive">
                                         </div>
                                     </div>
                                     <div class="col-md-10">
                                         <div class="review-comment">
-                                            <h3>“Oleaose Is The Best Stable, Fast App I Have Ever Experienced”</h3>
+                                            <h3>“How have i lived life with out a DeepScrub Sponge.”</h3>
 
                                             <p>
-                                                - Theodore Willis
+                                                - Ranjid Katar
                                                 <span>
                                                     <i class="fa fa-star fa-lg"></i>
                                                     <i class="fa fa-star fa-lg"></i>
@@ -279,21 +279,22 @@
                                 <div class="row">
                                     <div class="col-md-2">
                                         <div class="review-person">
-                                            <img src="http://api.randomuser.me/portraits/men/93.jpg" alt=""
+                                            <img src="https://scontent-iad3-1.xx.fbcdn.net/hphotos-xap1/v/t1.0-9/10846123_10101831258185895_3258839390104194917_n.jpg?oh=19191bceef2f5819635ec94ebb01df2d&oe=5624AD56"
+                                                 alt=""
                                                  class="img-responsive">
                                         </div>
                                     </div>
                                     <div class="col-md-10">
                                         <div class="review-comment">
-                                            <h3>“Keep It Up Guys Your Work Rules, Cheers :)”</h3>
+                                            <h3>“5/5 A+++, Quick shipping”</h3>
 
                                             <p>
-                                                - Ricky Grant
+                                                - Tom Grant
                                                 <span>
                                                     <i class="fa fa-star fa-lg"></i>
                                                     <i class="fa fa-star fa-lg"></i>
                                                     <i class="fa fa-star fa-lg"></i>
-                                                    <i class="fa fa-star-half-o fa-lg"></i>
+                                                    <i class="fa fa-star fa-lg"></i>
                                                     <i class="fa fa-star-o fa-lg"></i>
                                                 </span>
                                             </p>
@@ -344,22 +345,7 @@
                     <div class="col-md-12">
                         <div class="row">
                             <div class="col-md-8 col-sm-8 scrollpoint sp-effect1">
-                                <form role="form">
-                                    <div class="form-group">
-                                        <label for="emailName">Name</label>
-                                        <input id="emailName" type="text" class="form-control" placeholder="Your name"/>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="emailAddr">E-mail</label>
-                                        <input id="emailAddr" type="email" class="form-control"
-                                               placeholder="Your email"/>
-                                    </div>
-                                    <div class="form-group">
-                                    <textarea cols="30" rows="10" class="form-control"
-                                              placeholder="Your message"></textarea>
-                                    </div>
-                                    <button type="submit" class="btn btn-primary btn-lg">Submit</button>
-                                </form>
+                                {% crispy form %}
                             </div>
                             <div class="col-md-4 col-sm-4 contact-details scrollpoint sp-effect2">
                                 <div class="media">
@@ -388,5 +374,4 @@
                 </div>
             </div>
         </section>
-
 {% endblock %}

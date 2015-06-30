@@ -24,7 +24,12 @@ class SpongeTypeAdmin(admin.ModelAdmin):
 class SpongeAdmin(admin.ModelAdmin):
     pass
 
+
+class ContactUsAdmin(admin.ModelAdmin):
+    pass
+
 admin.site.register(models.Color, PriceAdmin)
 admin.site.register(models.Price, ColorAdmin)
 admin.site.register(models.SpongeType, SpongeTypeAdmin)
 admin.site.register(models.Sponge, SpongeAdmin)
+admin.site.register(models.ContactUs, ContactUsAdmin)

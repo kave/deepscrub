@@ -135,6 +135,7 @@ INSTALLED_APPS = (
 
     'core',
     'deepscrub',
+    'crispy_forms',
 )
 
 EMAIL_SUBJECT_PREFIX = '[deepscrub] '
@@ -208,3 +209,13 @@ PIPELINE_JS = {
         'output_filename': 'js.min.js',
     }
 }
+
+CRISPY_TEMPLATE_PACK = 'bootstrap3'
+
+#Email settings
+EMAIL_USE_TLS = True
+EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
+EMAIL_HOST = "smtp.gmail.com"
+EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER')
+EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD')
+EMAIL_PORT = os.environ.get('EMAIL_PORT')

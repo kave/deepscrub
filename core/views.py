@@ -12,15 +12,6 @@ class HomeView(FormView):
     form_class = ContactUsForm
     success_url = '/'
 
-    # def get(self, request):
-    #     strong_sponges = Sponge.objects.filter(type=SpongeType.STRONG)
-    #     gentle_sponges = Sponge.objects.filter(type=SpongeType.GENTLE)
-    #     contactus_form = ContactUsForm(request)
-    #
-    #     return render(request, 'main.html', {'strong_sponges': strong_sponges,
-    #                                          'gentle_sponges': gentle_sponges,
-    #                                          'contactus_form': contactus_form})
-
     def get_context_data(self, **kwargs):
         context = super(HomeView, self).get_context_data(**kwargs)
 
@@ -37,14 +28,6 @@ class HomeView(FormView):
         # It should return an HttpResponse.
         form.save()
         return super(HomeView, self).form_valid(form)
-
-    # def post(self, request):
-    #     form = ContactUsForm(request.POST)
-    #     #if form.is_valid():
-    #     form.save()
-    #      #   print 'yerp'
-    #     #else:
-    #       #  return HttpResponse('Invalid Data!')
 
 
 def product_detail_view(request, pk):
